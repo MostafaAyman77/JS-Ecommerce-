@@ -1,0 +1,94 @@
+:root {
+  --main-color: #fcb700;
+  --dark-color: #222222;
+  --parag-color: #666666;
+  --dark-red: #d01418;
+  --border-color: #6666662a;
+  --name-item: #0066c0;
+}
+header .bottom-nav .btn-open-menu,
+header .bottom-nav ul .logo-menu,
+header .bottom-nav ul .btn-close-menu {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  header .top-nav .search {
+    width: 420px;
+  }
+}
+@media (max-width: 900px) {
+  header .top-nav {
+    flex-wrap: wrap;
+  }
+  header .top-nav .search {
+    order: 3;
+    width: 80%;
+    margin: 10px auto 0;
+  }
+  header .bottom-nav {
+    padding: 20px 0;
+  }
+  header .bottom-nav ul {
+    position: fixed;
+    top: 0;
+    left: -420px;
+    bottom: 0;
+    background-color: #fff;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    border-right: 1px solid var(--border-color);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+  }
+  header .bottom-nav ul.active {
+    left: 0;
+  }
+  header .bottom-nav ul .logo-menu {
+    width: 140px;
+    margin: 50px auto 0;
+    display: block;
+  }
+  header .bottom-nav ul .btn-close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: var(--main-color);
+    cursor: pointer;
+    display: block;
+  }
+  header .bottom-nav .btn-open-menu {
+    font-size: 25px;
+    display: block;
+  }
+  header .bottom-nav ul .bg-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: calc(100% - 400px);
+    background-color: #0000003d;
+  }
+  header .bottom-nav ul.active .bg-overlay {
+    right: 0;
+  }
+}
+@media (max-width: 500px) {
+  header .top-nav .search {
+    width: 100%;
+  }
+  header .top-nav .search input {
+    padding: 13px 130px 13px 20px;
+  }
+  header .top-nav .search button {
+    width: 120px;
+    font-size: 14px;
+  }
+  header .bottom-nav ul {
+    width: 100%;
+    left: -100%;
+  }
+}
